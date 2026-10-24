@@ -1,0 +1,25 @@
+[project]
+name = "masarif"
+version = "0.1.0"
+description = "مصاريفي - تطبيق المصاريف الشخصية"
+requires-python = ">=3.10"
+dependencies = ["flet>=1.0.5,<1.1", "flet-local-auth>=1.0.5,<1.1", "flet-notifications==0.1.4", "reportlab>=4.0", "pillow"]
+
+[tool.flet]
+product = "مصاريفي"
+org = "com.masarif"
+
+[tool.flet.app]
+path = "."
+
+[tool.flet.android]
+min_sdk_version = 24
+
+# "All files access": lets the app write backups / PDFs straight into Download/Masarif (must be switched on once
+# by the user: Settings > Apps > مصاريفي > Permissions > Files and media > Allow management of all files).
+[tool.flet.android.permission]
+"android.permission.MANAGE_EXTERNAL_STORAGE" = true
+# Out-of-app reminders (flet-notifications): restore alarms after a reboot, and fire at the exact minute.
+"android.permission.RECEIVE_BOOT_COMPLETED" = true
+"android.permission.SCHEDULE_EXACT_ALARM" = true
+"android.permission.POST_NOTIFICATIONS" = true

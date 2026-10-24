@@ -1,0 +1,5 @@
+flet>=1.0.5,<1.1
+flet-local-auth>=1.0.5,<1.1
+flet-notifications==0.1.4
+reportlab>=4.0
+pillow
